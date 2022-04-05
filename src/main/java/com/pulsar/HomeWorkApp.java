@@ -2,6 +2,7 @@ package com.pulsar;
 
 import com.pulsar.consumer.Consumer;
 import com.pulsar.consumer.HomeWorkConsumer;
+import com.pulsar.functions.Exclamation;
 import com.pulsar.message.StringMsg;
 import com.pulsar.producer.HomeWorkProducer;
 import com.pulsar.producer.Producer;
@@ -46,8 +47,12 @@ public class HomeWorkApp {
 
         // start consumer at fix period.
         // If you use these codes for production environment,pool size parameter and any other thread parameter should be given.
+        // You can add more consume function here
+        Exclamation exclamation = new Exclamation();
         ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
-        service.scheduleAtFixedRate(() -> consumer.receive(producer::send), 1, 1, TimeUnit.SECONDS);
+        service.scheduleAtFixedRate(
+                () ->consumer.receive(msg -> {LOGGER.info("exclamation function: "+exclamation.apply(msg.getBody()));},producer::send),
+                1, 1, TimeUnit.SECONDS);
 
         // todo: close pulsar resource
         // producer.close();

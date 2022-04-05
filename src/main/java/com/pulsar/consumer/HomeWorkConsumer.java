@@ -21,15 +21,17 @@ public class HomeWorkConsumer<T> implements Consumer<T> {
     /**
      * Receive msg and handle it with using fn
      *
-     * @param fn the business handle function
+     * @param fns the business handle function
      */
     @Override
-    public void receive(java.util.function.Consumer<T> fn) {
+    public void receive(java.util.function.Consumer<T>... fns) {
         Message<T> msg = null;
         try {
             msg = consumer.receive();
             LOGGER.debug("received message: " + new String(msg.getData()));
-            fn.accept(msg.getValue());
+            for (java.util.function.Consumer<T> fn : fns) {
+                fn.accept(msg.getValue());
+            }
             consumer.acknowledge(msg);
         } catch (Exception e) {
             LOGGER.error(e.getLocalizedMessage());

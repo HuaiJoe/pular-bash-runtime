@@ -10,7 +10,7 @@ public interface Consumer<T> extends Closeable {
     /**
      * Receive msg and handle it with using fn
      *
-     * @param fn the business handle function
+     * @param fns the business handle function
      */
-    void receive(java.util.function.Consumer<T> fn);
+    void receive(java.util.function.Consumer<T> ...fns);
 }
