@@ -15,7 +15,7 @@ Help()
    echo "    m     Set message data, like: -m \"hello world\""
    echo
    echo "Example:"
-   echo "      send_message_to_pulsar.sh -u pulsar://192.168.49.2:32579 -t my-topic -m \"hello world\""
+   echo "      ./send_message_to_pulsar.sh -u pulsar://192.168.49.2:32579 -t my-topic -m \"hello world\""
 }
 
 #########################################
