@@ -1,25 +1,32 @@
-###1 add pulsar helm repo & update
+### 1 add pulsar helm repo & update
+
 ```
 helm repo add apache https://pulsar.apache.org/charts
 helm repo update
 ```
 
-###2 download pulsar chart
+### 2 download pulsar chart
+
 ```git clone https://github.com/apache/pulsar-helm-chart```
 
-###3 change workdir to pulsar helm chart repo
+### 3 change workdir to pulsar helm chart repo
+
 ```cd pulsar-helm-chart/```
 
-###3 run prepare scripts
+### 3 run prepare scripts
+
 ```./prepare_helm_release.sh -n pulsar -k pulsar-mini -c```
 
-###4 use helm to install
+### 4 use helm to install
+
 ```
 helm install  \
  --values examples/values-minikube.yaml \
  --set initialize=true --namespace pulsar  pulsar-mini apache/pulsar
  ```
-###5 verify pod status
+
+### 5 verify pod status
+
 ```
 (Running or Completed are must)
 kubectl get pods -n pulsar
@@ -35,7 +42,8 @@ pulsar-mini-toolset-0                     1/1     Running     0          13m
 pulsar-mini-zookeeper-0                   1/1     Running     0          13m
 ```
 
-###6 verify service status
+### 6 verify service status
+
 ```
 kubectl get services -n pulsar
 NAME                     TYPE           CLUSTER-IP      EXTEYRNAL-IP   PORT(S)                               AGE

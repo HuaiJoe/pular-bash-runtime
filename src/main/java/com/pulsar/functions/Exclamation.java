@@ -10,6 +10,6 @@ import static java.lang.String.format;
 public class Exclamation implements Function<String, String> {
     @Override
     public String apply(String input) {
-        return format("%s!",input);
+        return format("%s!", input);
     }
 }

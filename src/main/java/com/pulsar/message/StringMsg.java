@@ -4,7 +4,7 @@ package com.pulsar.message;
  * The class StringMsg is a business message definition.It can contain more information with request.
  */
 public class StringMsg {
-    
+
     String topic;
     String body; // message data
 
