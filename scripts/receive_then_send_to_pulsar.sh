@@ -1,5 +1,5 @@
 #!/bin/sh
-APP_HOME=/home/pulsar
+APP_HOME=/user/local/service/my_pulsar_homework
 #########################################
 # Help                                  #
 #########################################
@@ -37,8 +37,8 @@ echo "Pulsar Service Url: ${serviceUrl}"
 echo "From Topic: ${from}"
 echo "To Topic: ${to}"
 echo "SubscriptionName: ${subscription}"
-ÒÒ
+
 #########################################
 # Main: send message                    #
 #########################################
-java -jar "${APP_HOME}"/pulsar-bash-consumer.jar "${serviceUrl}" "${from}" "${to}" "${subscription}"
+java -jar "${APP_HOME}"/app/pulsar-bash-consumer.jar "${serviceUrl}" "${from}" "${to}" "${subscription}"

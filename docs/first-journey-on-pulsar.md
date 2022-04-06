@@ -60,7 +60,7 @@ http://192.168.49.2:32579 (brokerServiceUrl=pulsar://192.168.49.2:32579/)
  pulsar-client consume -s sub oed/pulsar/oed-topic  -n 0
  ```
 
-![](consumer.png)
+![](pic/consumer.png)
 
 ```
  send message:
