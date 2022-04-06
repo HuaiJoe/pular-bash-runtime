@@ -10,8 +10,8 @@ IMAGE_NAME       := ${REPO}/${APPLICATION}
 #############################
 .PHONY: compile
 compile:
-	mvn package -Dconsumer -s /Users/huaizhouliu/apache-maven-3.6.3/conf/settings_dev.xml
-	mvn package -Dproducer -s /Users/huaizhouliu/apache-maven-3.6.3/conf/settings_dev.xml
+	mvn package -Dconsumer
+	mvn package -Dproducer
 
 
 #############################
@@ -27,7 +27,7 @@ clean:
 #############################
 .PHONY: test
 test:
-	mvn test -s /Users/huaizhouliu/apache-maven-3.6.3/conf/settings_dev.xml
+	mvn test
 
 ############################
 # Build package            #
