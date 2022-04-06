@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pulsar-bash-runtime
+  labels:
+    app: pulsar-bash-runtime
+  namespace: pulsar
+spec:
+  clusterIP: None
+  selector:
+    app: pulsar-bash-runtime
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: pulsar-bash-runtime
+  namespace: pulsar
+spec:
+  serviceName: pulsar-bash-runtime
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pulsar-bash-runtime
+  template:
+    metadata:
+      labels:
+        app: pulsar-bash-runtime
+    spec:
+      containers:
+        - name: pulsar-bash-runtime
+          image: csighub.tencentyun.com/huaizhouliu/go_edu_gdhrss_svr:1.0.0
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
