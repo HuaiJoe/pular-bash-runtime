@@ -28,7 +28,16 @@ spec:
     spec:
       containers:
         - name: pulsar-bash-runtime
-          image: huaijoe/my_pulsar_homework:1.0.0
+          image: csighub.tencentyun.com/huaizhouliu/my_pulsar_homework:1.0.1
+          env:
+          - name: PULSAR_SERVICE_URL
+            value: pulsar://192.168.49.2:30734
+          - name: FROM_TOPIC
+            value: oed/pulsar/oed-topic
+          - name: TO_TOPIC
+            value: oed/pulsar/oed-topic2
+          - name: SUBSCRIPTION_NAME
+            value: sub
           resources:
             requests:
               cpu: 100m

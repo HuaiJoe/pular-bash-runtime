@@ -9,36 +9,36 @@ class WordCountTest {
     @Test
     void should_return_1_when_input_one_word() {
         WordCounter counter = new WordCounter();
-        assertEquals(1, counter.apply("hello"));
+        assertEquals(1, counter.apply("hello").intValue());
     }
 
     @Test
     void should_return_0_when_input_is_blank() {
         WordCounter counter = new WordCounter();
-        assertEquals(0, counter.apply(""));
+        assertEquals(0L, counter.apply("").intValue());
     }
 
     @Test
     void should_return_0_when_input_only_spaces() {
         WordCounter counter = new WordCounter();
-        assertEquals(0, counter.apply("    "));
+        assertEquals(0, counter.apply("    ").intValue());
     }
 
     @Test
     void should_return_1_when_input_word_has_many_prefix_spaces() {
         WordCounter counter = new WordCounter();
-        assertEquals(1, counter.apply("  hello"));
+        assertEquals(1, counter.apply("  hello").intValue());
     }
 
     @Test
     void should_return_1_when_input_word_has_many_postfix_spaces() {
         WordCounter counter = new WordCounter();
-        assertEquals(1, counter.apply("hello  "));
+        assertEquals((long) 1, counter.apply("hello  ").intValue());
     }
 
     @Test
     void should_return_2_when_input_two_words() {
         WordCounter counter = new WordCounter();
-        assertEquals(2, counter.apply("hello  world"));
+        assertEquals(2, counter.apply("hello  world").intValue());
     }
 }
