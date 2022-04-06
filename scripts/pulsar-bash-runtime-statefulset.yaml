@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
         - name: pulsar-bash-runtime
-          image: csighub.tencentyun.com/huaizhouliu/go_edu_gdhrss_svr:1.0.0
+          image: huaijoe/my_pulsar_homework:1.0.0
           resources:
             requests:
               cpu: 100m

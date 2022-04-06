@@ -1,5 +1,5 @@
 #!/bin/sh
-APP_HOME=/home/pulsar
+APP_HOME=/user/local/service/my_pulsar_homework
 #########################################
 # Help                                  #
 #########################################
@@ -38,4 +38,4 @@ echo "Message: $msg";
 #########################################
 # Main: send message                    #
 #########################################
-java -jar "${APP_HOME}"/pulsar-bash-producer.jar "${serviceUrl}"  "${topic}" "${msg}"
+java -jar "${APP_HOME}"/app/pulsar-bash-producer.jar "${serviceUrl}"  "${topic}" "${msg}"

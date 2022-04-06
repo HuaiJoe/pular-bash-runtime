@@ -6,7 +6,7 @@
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %p %m%n"/>
         </Console>
 
-        <File name="file" fileName="target/pulsar-bash-runtime.log"
+        <File name="file" fileName="./log/pulsar-bash-runtime.log"
               immediateFlush="false" append="false">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%-5level] %C.%M[%L line] %p %m%n"/>
         </File>
