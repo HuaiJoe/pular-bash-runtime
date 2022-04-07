@@ -21,7 +21,7 @@ If you want to push image to the repo that you can access esaily, Please modify 
 #### 3. Deploy bash runtime
 
 ```
-Before you apply the statefulset specifation file (locate in scripts directory),if it is very important to assure that container image and env parameter is correct.
+Before you apply the statefulset specifation file (locate in scripts directory),it is very important to assure that container image and env parameter is correct.
 
 $ kubectl apply -f pulsar-bash-runtime-statefulset.yaml 
 service/pulsar-bash-runtime created
