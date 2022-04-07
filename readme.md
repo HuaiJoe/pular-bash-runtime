@@ -10,8 +10,9 @@
 > 
 > 2.2 download service specific files from [github](https://github.com/HuaiJoe/pular-bash-runtime/blob/main/scripts/pulsar-bash-runtime-statefulset.yaml)
 > 
-> 2.3 kubectl apply -f pulsar-bash-runtime-statefulset.yaml
-
+> 2.3 update container env parameters in pulsar-bash-runtime-statefulset.yaml
+> 
+> 2.4 kubectl apply -f pulsar-bash-runtime-statefulset.yaml
 
 3 How to build project and install application
 
