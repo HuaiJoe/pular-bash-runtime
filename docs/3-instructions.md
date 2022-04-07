@@ -83,7 +83,7 @@ options:
 Example:
       ./receive_then_send_to_pulsar.sh -u pulsar://192.168.49.2:32579 -f my-topic -t my-topic -n sub1
 
-You can find a java process had already running,this process is a demo.It transfer message to the other topics and output messages with exclamation behind them.
+You can find a java process had already running,this process is a demo app.It transfer message to the other topics and output messages with exclamation behind them.
 ```
 ![](pic/app_process.png)
 

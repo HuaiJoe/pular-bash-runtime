@@ -63,3 +63,26 @@ public class HomeWorkConsumer<T> implements Consumer<T> {
     }
 }
 ```
+3.5 Boot Class
+```
+public class HomeWorkApp {
+    private static final Logger LOGGER = LoggerFactory.getLogger(HomeWorkApp.class);
+
+    public static void main(String[] args) throws IOException {
+         ...
+        
+        Exclamation exclamation = new Exclamation();
+        ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
+        
+        // You can add more consume function here
+        service.scheduleAtFixedRate(
+                () ->consumer.receive(
+                          msg -> {LOGGER.info("exclamation function: "+exclamation.apply(msg.getBody()));},
+                          producer::send
+                          ),
+                1, 1, TimeUnit.SECONDS);
+
+    }
+}
+
+```
