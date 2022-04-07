@@ -10,7 +10,7 @@ $ make clean test compile package
 If the command run succeed,you would see two jars (pulsar-bash-consumer.jar and pulsar-bash-producer.jar) under the target directory.
 ```
 
-#### 2. build image and push to hub
+#### 2. build image and push to docker hub
 
 ```
 make image push
